@@ -1,12 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe SessionsController, type: :controller do
+class SessionsControllerTest < ActionDispatch::IntegrationTest
 
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
+  test "should get new" do
+    get login_path
+    assert_response :success
   end
-
 end
